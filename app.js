@@ -1,18 +1,22 @@
-// console.log(__dirname)
-// console.log(__filename)
-// console.log(process)
+const http = require('http');
 
-const names = require('./names')
-const sayHi = require('./utils')
-const data = require('./6-alternative-export-flavour');
-
-require('./mind-grenade')
-
-
-// console.log(names);
-
+const server = http.createServer((req, res) => {
+    if(req.url === '/')
+    {
+        res.end("welcome to our home page");
+    }
+    if(req.url === '/about') 
+    {
+        res.end("This is our short history");
+    }
 
 
-// sayHi("Elvis");
-// sayHi(names.john);
-// sayHi(names.peter);
+    res.end(`
+        <h1>Oppps!!! page not found!</h1>
+        <a href="/">Go to Home</a> | <a href="/about">About</a>    
+        `)
+   
+
+
+});
+server.listen(5000)
