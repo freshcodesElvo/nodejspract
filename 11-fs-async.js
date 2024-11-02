@@ -26,12 +26,8 @@ readFile('./content/first.txt','utf8', (err, result)=>{
                             return;
                         }
                     console.log('done with this task');
-
-
                 });
-
     });
-
-
-})
+    
+});
 console.log("Starting the nxt one");
